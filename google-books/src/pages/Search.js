@@ -1,6 +1,7 @@
-import React, { Component } from "react"
+import React, { Component, Fragment } from "react"
 import Book from "../components/Book";
 import API from "../utils/API";
+import Form from "../components/Form";
 
 class Search extends Component {
     state = {
@@ -50,9 +51,17 @@ class Search extends Component {
 
     render() {
         return (
-            <Book />
+            <Fragment>
+                <Form
+                handleInputChange={this.handleInputChange}
+                handleFormSubmit={this.handleFormSubmit}
+                q={this.state.q}
+                />
+                <Book />
+            </Fragment>
+
         )
     }
 
 
-export default Search;
+    export default Search;
