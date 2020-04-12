@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react"
 import Book from "../components/Book";
 import API from "../utils/API";
 import Form from "../components/Form";
+import List from "../components/List"
 
 class Search extends Component {
     state = {
@@ -51,17 +52,37 @@ class Search extends Component {
 
     render() {
         return (
-            <Fragment>
-                <Form
-                handleInputChange={this.handleInputChange}
+         
+                <Form>
+                    handleInputChange={this.handleInputChange}
                 handleFormSubmit={this.handleFormSubmit}
                 q={this.state.q}
-                />
-                <Book />
-            </Fragment>
 
+            this.state.books.length ? (
+                <List>
+                        {this.state.books.map(book => (
+                            <Book>
+                                key={book.id}
+                        title={book.volumeInfo.title}
+                        link={book.volumeInfo.infoLink}
+                        authors={book.volumeInfo.authors.join(", ")}
+                        description={book.volumeInfo.description}
+                        image={book.volumeInfo.imageLinks.thumbnail}
+                        Button={() => (
+                                    <button
+                                        onClick={() => this.handleBookSave(book.id)}
+                                        className="btn btn-primary"
+                                    >
+                                        save
+                                    </button>
+                                )}
+                            </Book>
+                        ))}
+                    </List>
+            )
+                <h2>{this.state.message}</h2>
+                </Form>
         )
     }
-
 
     export default Search;
