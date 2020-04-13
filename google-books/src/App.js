@@ -9,17 +9,18 @@ import Navbar from "./components/Navbar";
 function App() {
   return (
     <Router>
+      <Navbar />
       <Switch>
-        <Route absolute path="/">
-          <Navbar />
+        <Route absolute path="/" >
+        </Route>
+        <Route absolute path='/search' exact component={Search}>
           <Search />
         </Route>
-        <Route absolute path="/saved">
-          <Navbar />
+        <Route absolute path="/saved" exact component={Saved}>
           <Saved />
-         </Route>
+        </Route>
       </Switch>
-  </Router>
+    </Router>
   );
 }
 
