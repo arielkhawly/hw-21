@@ -4,7 +4,7 @@ import API from "../utils/API";
 import Form from "../components/Form";
 import List from "../components/List"
 
-class Search extends Component {
+export default class Search extends Component {
     state = {
         books: [],
         q: "",
@@ -84,5 +84,4 @@ class Search extends Component {
                 </Form>
         )
     }
-
-    export default Search;
+}
