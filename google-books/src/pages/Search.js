@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react"
 import Book from "../components/Book";
 import API from "../utils/API";
 import Form from "../components/Form";
-import List from "./pages/List"
+import List from "../components/List"
 
 export default class Search extends Component {
     state = {
