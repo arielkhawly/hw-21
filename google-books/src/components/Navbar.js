@@ -11,6 +11,9 @@ function Navbar() {
             </button>
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav main-navbar">
+                <li className="nav-item">
+                        <Link to='/search' className="navLink">Search Books</Link>
+                    </li>
                     <li className="nav-item">
                         <Link to='/saved' className="navLink">Saved Books</Link>
                     </li>
