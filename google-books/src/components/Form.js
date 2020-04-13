@@ -7,6 +7,11 @@ function Form({ q, handleInputChange, handleFormSubmit }) {
       <div className="form-group">
         <label htmlFor="Query">
           <h4>Book</h4>
- 
+        </label>
+      </div>
+    </form>
+  )
+}
+
 
 export default Form;
